@@ -415,6 +415,12 @@ header {
   align-items: center;
 }
 
+.block-8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .x,
 .o {
   color: #eb455f;
