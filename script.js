@@ -22,3 +22,23 @@ const GameBoard = (function () {
 const PlayerFactory = (marker) => {
   return { marker };
 };
+
+const playGame = () => {
+  const playerOne = PlayerFactory("X");
+  const playerTwo = PlayerFactory("O");
+  let currentPlayer = playerOne;
+
+  GameBoard.init();
+  GameBoard.gameBlocks.forEach((block) =>
+    block.addEventListener("click", (e) => {
+      const targettedBlock = e.target.id;
+      GameBoard.placeMarker(currentPlayer.marker, targettedBlock);
+      // toggle player turns
+      currentPlayer === playerOne
+        ? (currentPlayer = playerTwo)
+        : (currentPlayer = playerOne);
+    })
+  );
+};
+
+playGame();
