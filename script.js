@@ -12,8 +12,11 @@ const GameBoard = (function () {
   let currentPlayer = playerOne;
   let isPlaying = false;
 
-  const endGame = function () {
+  const endGame = function (winningCombo) {
     isPlaying = false;
+    winningCombo.forEach((block) =>
+      gameBlocks[block].classList.add("winning-combo")
+    );
   };
 
   const updateBoardDisplay = function () {
@@ -39,7 +42,7 @@ const GameBoard = (function () {
         gameState[combo[0]] === gameState[combo[2]]
       ) {
         // end game
-        endGame();
+        endGame(combo);
         return;
       }
       console.log(false);

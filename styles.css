@@ -425,3 +425,7 @@ header {
 .o {
   color: #eb455f;
 }
+
+.winning-combo {
+  background-color: rgb(98, 255, 98);
+}
