@@ -427,5 +427,6 @@ header {
 }
 
 .winning-combo {
-  background-color: rgb(98, 255, 98);
+  background-color: rgb(126, 244, 145);
+  transition-duration: 125ms;
 }
