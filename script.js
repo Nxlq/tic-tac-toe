@@ -1,5 +1,5 @@
 "use strict";
-
+const btnNewGame = document.querySelector("#btn-new-game");
 const PlayerFactory = (marker) => {
   return { marker };
 };
@@ -61,6 +61,7 @@ const GameBoard = (function () {
     updateBoardDisplay();
     isPlaying = true;
 
+    gameBlocks.forEach((block) => block.classList.remove("winning-combo"));
     gameBlocks.forEach((block) =>
       block.addEventListener("click", (e) => {
         if (!isPlaying) return;
@@ -76,14 +77,9 @@ const GameBoard = (function () {
       })
     );
   };
-
-  return { gameBlocks, placeMarker, updateBoardDisplay, init, isPlaying };
+  init();
+  return { init };
 })();
 
-const playGame = () => {
-  GameBoard.init();
-};
-
-playGame();
-
+btnNewGame.addEventListener("click", GameBoard.init);
 // functions need to be in the same place
