@@ -355,6 +355,7 @@ template {
     sans-serif;
   box-sizing: border-box;
   --game-border: solid 5px black;
+  --header-color: #537fe7;
 }
 
 body {
@@ -367,7 +368,7 @@ body {
 
 header {
   height: 10rem;
-  color: #537fe7;
+  color: var(--header-color);
   font-size: 7rem;
   display: flex;
   text-align: center;
@@ -448,4 +449,10 @@ main {
 button {
   height: 2.5rem;
   width: 9rem;
+  background-color: #eb455f;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: #db6577;
 }
